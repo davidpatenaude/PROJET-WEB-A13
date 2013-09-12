@@ -5,7 +5,7 @@
 	@include('side-nav')
 	<div class="main-wrapper">
 		<div class="left main-align"></div>
-		<div class="center main">
+		<div class="main center">
 		@section('main')
 			@include('footer')
 		@show
