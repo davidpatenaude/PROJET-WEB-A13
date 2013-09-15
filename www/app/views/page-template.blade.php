@@ -3,9 +3,10 @@
 @section('page')
 	@include('header')
 	@include('side-nav')
-	<div class="main-wrapper">
+	<div class="ici-la-connection"></div>
+	<div class="main wrapper">
 		<div class="left main-align"></div>
-		<div class="main center">
+		<div class="main content center">
 		@section('main')
 			@include('footer')
 		@show

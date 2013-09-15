@@ -18,12 +18,16 @@ textarea {
     color: #222;
 }
 
+html{
+    min-height: 100%;
+}
 
-/* Height probleme... */
-body {
+body{
+    min-height: 100%;
     font-size: 1em;
     line-height: 1.4;
     background-color: #F4F4F4;
+    color: #4F4F4F;
 }
 
 /*
@@ -33,12 +37,12 @@ body {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: #C4C4C4;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: #C4C4C4;
     text-shadow: none;
 }
 
@@ -103,39 +107,83 @@ textarea {
 /*  ==========================================================================
     Navigation
     ========================================================================== */
-
-$img-btn-option : '../img/side-nav-header-btn.png';
+@mixin shadow($left:0px,$bottom:2px,$radius:4px,$color:rgba(0,0,0, 0.2)) {
+    -moz-box-shadow: $left $bottom $radius $color;
+    -webkit-box-shadow: $left $bottom $radius $color;
+    box-shadow: $left $bottom $radius $color;
+}
 
 @import "header";
 
+.ici-la-connection{
+    position: fixed;
+    margin-top: 50px;
+    width: 188px;
+    height: 188px;
+    background-image: url('../img/cliquez-ici-pour-connecter.png');
+}
 
 .main-align{
     background-color: transparent;
-}
-
-.left.main-align{
-    width: 188px;
-    height: 50px;
-}
-
-.right.main-align{
-    width: 240px;
-    height: 50px;
+    &.left{
+        width: $side-nav-width;
+        height: 50px;
+    }&.right{
+        width: 240px;
+        height: 50px;
+    }
 }
 
 .main{
-    text-align: left;
-    padding-top: 65px;
-    width: 614px;
+    &.wrapper{
+        text-align: center;
+    }
+    &.content{
+        text-align: left;
+        padding: 50px 0px 0px 15px;
+        width: 614px;
+    }
+    > article{
+        padding: 15px;
+        margin: 15px 15px 0px 0px;
+        background-color: #FFF;
+        float: left;
+        @include shadow;
+        &.widget{
+        width: (614px - 45px)/3 - 30px;
+        }
+    }
 }
 
-.main-wrapper{
-    text-align: center;
+.footer-container{
+    float: left;
+    padding-right: 15px;
 }
 
-.wrapper{
-    padding: 15px;
-    background-color: #fff;
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+
+/* ne pas oublier de mettre l'élément parent en text-align: center; */
+.center{
+    margin:0 auto !important; 
+    display:inline-block;
+}
+
+.unselectable {
+    -WEBKIT-USER-SELECT: NONE; /* SAFARI, CHROME */
+    -KHTML-USER-SELECT: NONE; /* KONQUEROR */
+    -MOZ-USER-SELECT: NONE; /* FIREFOX */
+    -MS-USER-SELECT: NONE; /* IE */
+    USER-SELECT: NONE; /* CSS3 */
+}
+
+.no-pm{
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -258,33 +306,6 @@ $img-btn-option : '../img/side-nav-header-btn.png';
 
 .clearfix {
     *zoom: 1;
-}
-
-
-.right {
-    float: right;
-}
-.left {
-    float: left;
-}
-
-/* ne pas oublier de mettre l'élément parent en text-align: center; */
-.center{
-    margin:0 auto !important; 
-    display:inline-block;
-}
-
-.unselectable {
-    -WEBKIT-USER-SELECT: NONE; /* SAFARI, CHROME */
-    -KHTML-USER-SELECT: NONE; /* KONQUEROR */
-    -MOZ-USER-SELECT: NONE; /* FIREFOX */
-    -MS-USER-SELECT: NONE; /* IE */
-    USER-SELECT: NONE; /* CSS3 */
-}
-
-.no-pm{
-    padding: 0;
-    margin: 0;
 }
 
 /* ==========================================================================

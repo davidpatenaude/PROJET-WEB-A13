@@ -1,18 +1,22 @@
 $height : 50px;
-$bg : #00bce8;
-$color : #fff;
-$hover-bg : #09c;
+$bg : #00BCE8;
+$color : #FFF;
+$hover-bg : #09C;
 $option-btn-witdh : 50px;
 $option-btn-height : $height;
 $side-nav-width : 188px;
 $padding : 15px;
 
- @mixin transition-effect($time) {
+ @mixin transition-effect($time:400ms) {
     -moz-transition: color $time ease-in-out 0s, background-color $time ease-in-out 0s, background-image $time ease-in-out 0s;
     -ms-transition: color $time ease-in-out 0s, background-color $time ease-in-out 0s, background-image $time ease-in-out 0s;
     -o-transition: color $time ease-in-out 0s, background-color $time ease-in-out 0s, background-image $time ease-in-out 0s;
     -webkit-transition: color $time ease-in-out 0s, background-color $time ease-in-out 0s, background-image $time ease-in-out 0s;
     transition: color $time ease-in-out 0s, background-color $time ease-in-out 0s, background-image $time ease-in-out 0s;
+}
+
+@mixin side-nav-shadow{
+    @include shadow(0px,0px,0px,rgba(0,0,0,0));
 }
 
 header{
@@ -25,6 +29,7 @@ header{
     text-align:center;
     top: 0px;
     left:0px;
+    @include shadow(0px);
     nav{
         margin: 0 auto;
         font-size: 12px;
@@ -57,6 +62,7 @@ header{
     height: $height;
     width: 0px;
     background-color:  $hover-bg;
+    @include side-nav-shadow;
 }
 
 .side-nav-header-btn{
@@ -68,7 +74,7 @@ header{
     background-image: url('../img/side-nav-header-btn.png');
     background-repeat:no-repeat;
     background-position: center;
-    @include transition-effect(400ms);
+    @include transition-effect;
     &:hover {
         cursor: pointer;
         background-color: $hover-bg;
@@ -95,7 +101,7 @@ header{
     line-height: $height;
     color: $color;
     text-decoration: none;
-    @include transition-effect(400ms);
+    @include transition-effect;
     &:hover{
         background-color: $hover-bg;
     }
@@ -116,7 +122,7 @@ ul {
     height: 100%;
     width: 100%;
     li{
-        @include transition-effect(400ms);
+        @include transition-effect;
         a{  
             display: block;
             text-decoration: none;
@@ -195,6 +201,7 @@ ul {
     left: -$side-nav-width;
     top: 0px;
     padding-top: $height;
+    @include side-nav-shadow;
 }
 
 .side-nav-login{
