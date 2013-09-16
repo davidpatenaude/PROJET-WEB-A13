@@ -405,6 +405,7 @@ ul > a.active {
   /* FIREFOX */
   -MS-USER-SELECT: NONE;
   /* IE */
+  -o-user-select: NONE;
   USER-SELECT: NONE;
   /* CSS3 */
 }

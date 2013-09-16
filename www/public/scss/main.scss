@@ -178,7 +178,8 @@ textarea {
     -KHTML-USER-SELECT: NONE; /* KONQUEROR */
     -MOZ-USER-SELECT: NONE; /* FIREFOX */
     -MS-USER-SELECT: NONE; /* IE */
-    USER-SELECT: NONE; /* CSS3 */
+    -o-user-select: NONE;
+    USER-SELECT: NONE; /* CSS3 */ 
 }
 
 .no-pm{
